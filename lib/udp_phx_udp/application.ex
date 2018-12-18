@@ -3,8 +3,10 @@ defmodule UdpPhxUdp.Application do
     深く考えず作ったためにudpという文言が2つもついてしまった気持ち悪いアプリケーション
   """
   use GenServer
+  require Logger
 
   def start_link(port \\ 12345) do
+    Logger.info("UDP server binding #{port}")
     GenServer.start_link(__MODULE__, port)
   end
 
