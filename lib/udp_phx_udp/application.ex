@@ -12,8 +12,8 @@ defmodule UdpPhxUdp.Application do
     :gen_udp.open(port, [:binary])
   end
 
-  def handle_info({:udp, _socket, _address, _port, data}, socket) do
-    IO.inspect(data)
-    {:noreply, socket}
+  def handle_info({:udp, socket, host, port, _} = data, server_socket) do
+    :gen_udp.send(socket, host, port, "#{inspect(data)}>\n")
+    {:noreply, server_socket}
   end
 end

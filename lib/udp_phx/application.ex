@@ -12,7 +12,7 @@ defmodule UdpPhx.Application do
       supervisor(UdpPhxWeb.Endpoint, []),
       # Start your own worker by calling: UdpPhx.Worker.start_link(arg1, arg2, arg3)
       # worker(UdpPhx.Worker, [arg1, arg2, arg3]),
-      supervisor(UdpPhxUdp.Application, [])
+      supervisor(UdpPhxUdp.Application, [8080])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
