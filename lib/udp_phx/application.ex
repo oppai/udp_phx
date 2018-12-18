@@ -6,15 +6,13 @@ defmodule UdpPhx.Application do
   def start(_type, _args) do
     import Supervisor.Spec
 
-    port = System.get_env("PORT")
-
     # Define workers and child supervisors to be supervised
     children = [
       # Start the endpoint when the application starts
-      # supervisor(UdpPhxWeb.Endpoint, []),
+      supervisor(UdpPhxWeb.Endpoint, []),
       # Start your own worker by calling: UdpPhx.Worker.start_link(arg1, arg2, arg3)
       # worker(UdpPhx.Worker, [arg1, arg2, arg3]),
-      supervisor(UdpPhxUdp.Application, [port])
+      supervisor(UdpPhxUdp.Application, [8080])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
