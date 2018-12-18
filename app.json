@@ -1,0 +1,12 @@
+{
+    "name": "UDP sample server",
+    "description": "This app is sample udp server.",
+    "keywords": [
+        "Elixir",
+        "Phoenix",
+        "UDP"
+    ],
+    "buildpacks": [{
+        "url": "https://github.com/HashNuke/heroku-buildpack-elixir.git"
+    }]
+}
