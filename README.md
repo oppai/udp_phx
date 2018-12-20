@@ -21,4 +21,4 @@ echo "test" | nc -u -w1 0.0.0.0 8080
 ```
 
 ## Also see
-- ...
+- ElixirのPhoenixでUDPサーバを実装する https://qiita.com/kodam/items/84b0b96e8134187b91a2
